@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({
@@ -6,22 +6,17 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   title = 'My Card Title';
   text = 'My sample text';
 
-  disabled = false
-
-  imgUrl = 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png';
-
-  ngOnInit() {
-    setTimeout(() => {
-      this.imgUrl = 'https://homepages.cae.wisc.edu/~ece533/images/arctichare.png';
-      this.disabled = true
-    }, 3000);
+  changeTitle() {
+    this.title = 'This title has been changed';
   }
 
-  getInfo() {
-    return 'This is method info';
+  inputHandler(event: any) {
+    const value = event.target.value;
+    this.title = value;
   }
+
 }

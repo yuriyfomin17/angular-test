@@ -1,10 +1,11 @@
 <div class="card">
   <h2>{{title}}</h2>
   <p>{{text}} </p>
-  <p>{{getInfo()}}</p>
+  <div class="buttons">
+    <button (click)="changeTitle()">Change Title</button>
+    <button (click)="title='Inline title'"> Change title inline</button>
+  </div>
   <div>
-    <img [src]="imgUrl">
-    <br>
-    <button [disabled]="disabled">Enable</button>
+    <input type="text" (input)="inputHandler($event)" [value]="title">
   </div>
 </div>
