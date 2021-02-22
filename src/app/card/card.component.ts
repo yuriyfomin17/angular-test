@@ -14,8 +14,8 @@ export class CardComponent {
     this.title = 'This title has been changed';
   }
 
-  inputHandler(event: any) {
-    const value = event.target.value;
+  inputHandler(value) {
+
     this.title = value;
   }
 
